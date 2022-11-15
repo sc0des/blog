@@ -1,6 +1,6 @@
-# Blog
+# Writeup Blog
 
-A simple laravel based blog 
+A simple laravel based blog for CTF writeups
 
 ## Authors
 
