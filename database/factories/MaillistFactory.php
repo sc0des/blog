@@ -18,6 +18,7 @@ class MaillistFactory extends Factory
     {
         return [
             //
+            'email' => fake()->unique()->safeEmail()
         ];
     }
 }
