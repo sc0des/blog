@@ -1,6 +1,5 @@
 <section class="dark:bg-gray-800 dark:text-gray-100">
     <div class="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
-        <h1 class="text-4xl font-bold leading-none sm:text-5xl">Welcome to  <span class="dark:text-violet-400">Writeups</span></h1>
-        <p class="px-8 mt-8 mb-12 text-lg"> where you can get the latest ctf blogs !</p>
+    <h1 class="text-4xl font-bold leading-none sm:text-5xl">[ <span class="dark:text-violet-400">{{$title}}</span> ]</h1>
     </div>
 </section>

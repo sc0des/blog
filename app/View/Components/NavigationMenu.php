@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class NavigationMenu extends Component
 {
+    public array $menu;
     /**
      * Create a new component instance.
      *
@@ -13,9 +14,9 @@ class NavigationMenu extends Component
      */
     public function __construct()
     {
-        //
+        $this->menu = config('writeups.menu');
     }
-
+ 
     /**
      * Get the view / contents that represent the component.
      *

@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class Footer extends Component
 {
+    public array $footers;
     /**
      * Create a new component instance.
      *
@@ -13,7 +14,7 @@ class Footer extends Component
      */
     public function __construct()
     {
-        //
+        $this->footers = config('writeups.footers');
     }
 
     /**
