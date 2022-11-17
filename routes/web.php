@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 // ======================== PUBLIC ROUTES ==============================
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
 
-Route::get('users', [\App\Http\Controllers\WritersController::class, 'index']);
+
+Route::resource('users', \App\Http\Controllers\WritersController::class);
+
 #Route::get('/', [\App\Http\Controllers\PostController::class, 'index']);
 #Route::get('/', [\App\Http\Controllers\TagsController::class, 'index']);
 

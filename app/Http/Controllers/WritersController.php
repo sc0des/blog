@@ -12,5 +12,11 @@ class WritersController extends Controller
         $users = User::all();
         return view('users', compact('users'));
         
-       }
+    }
+
+    public function show(int $id)
+    {
+        $user = User::find($id);
+        return view('user', compact('user'));
+    }
 }
