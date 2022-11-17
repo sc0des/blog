@@ -26,13 +26,11 @@
 
         <div class="px-10 py-4 dark:bg-gray-800 dark:text-gray-50"></div>
 
-        <!--Main-->
+        <!--Main Slot-->
         <section class="dark:bg-gray-800 dark:text-gray-50">
             <div class="container  mx-auto dark:bg-gray-900">
-                <div class="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
-                    <div class="pt-8"></div>
-                    {{$slot}}
-                    <div class="pt-4"></div>
+                <div class="flex flex-col p-6 ">
+                    <div class="pt-4">{{$slot}}</div>
                 </div>
             </div>
         </section>
