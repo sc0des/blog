@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+// ======================== PUBLIC ROUTES ==============================
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
 
+Route::get('users', [\App\Http\Controllers\WritersController::class, 'index']);
+#Route::get('/', [\App\Http\Controllers\PostController::class, 'index']);
+#Route::get('/', [\App\Http\Controllers\TagsController::class, 'index']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+
