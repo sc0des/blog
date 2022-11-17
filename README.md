@@ -43,8 +43,20 @@ Go to the project directory
 
 ## Screenshots
 
-       
+
+
+## Resources
+
+- [Template Componenets](https://mambaui.com/)
+
 
 ## Authors
 
 - [@sc0des](https://github.com/sc0des)
+
+
+## Acknowledgements
+
+  Thank you to [ndeblauw](https://github.com/ndeblauw) for introducing and teaching Laravel Framework.
+
+ 
