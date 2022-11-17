@@ -7,7 +7,7 @@
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
                         @foreach($menu as $item)
-                            <a href="{{$item['url']}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$item['title']}}</a>
+                            <a href="{{$item['url']}}" class=" text-white @if($item['active']) bg-gray-900 text-gray-300 @else hover:bg-gray-700 @endif hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$item['title']}}</a>
                         @endforeach
                         </div>
                     </div>
@@ -52,9 +52,9 @@
                     </div>
                 </div>
             </div>
-        
+
             <!-- Mobile menu -->
-            
+
             <div class="-mr-2 flex md:hidden">
             <!-- Mobile menu button -->
             <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
@@ -78,7 +78,7 @@
       </div>
     </div>
 
-   
+
 
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="md:hidden" id="mobile-menu">

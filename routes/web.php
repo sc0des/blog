@@ -15,13 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 
 // ======================== PUBLIC ROUTES ==============================
-Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
 
+// Welcome View
+Route::get('/', \App\Http\Controllers\WelcomeController::class)->name('welcome');
 
+// Users View
 Route::resource('users', \App\Http\Controllers\WritersController::class);
 
-#Route::get('/', [\App\Http\Controllers\PostController::class, 'index']);
-#Route::get('/', [\App\Http\Controllers\TagsController::class, 'index']);
+// Blog Posts View
+Route::resource('posts', \App\Http\Controllers\PostController::class);
+
+// Tags View
+Route::resource('tags', \App\Http\Controllers\TagsController::class);
+
 
 
 
