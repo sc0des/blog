@@ -14,11 +14,14 @@ A simple laravel based blog for CTF writeups
 ### Installation Requirements
 
  Laravel Framework
- - PHP
- - MySQL
- - Node.js
- - Composer
 
+ - [PHP](https://www.php.net/downloads.php)
+ - [MySQL](https://www.mysql.com/downloads/)
+ - [Node.js](https://nodejs.org/en/)
+ - [Composer](https://getcomposer.org/)
+ - [Laragon](https://laragon.org/download/)
+
+ 
 
 ## Run Locally
 
@@ -40,7 +43,7 @@ Go to the project directory
 
 ## Screenshots
 
-
+       
 
 ## Authors
 
