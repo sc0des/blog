@@ -2,7 +2,7 @@
     <article class="max-w-2xl px-6 py-24 mx-auto space-y-16 dark:text-gray-50">
         <div class="w-full mx-auto space-y-4">
             <div class="flex flex-wrap space-x-2 text-sm dark:text-gray-400">
-                <a rel="noopener noreferrer" href="#" class="p-1 hover:underline">{{$post->tag_id}}</a>
+                <a rel="noopener noreferrer" href="#" class="p-1 hover:underline"> $post->tags as $tag $tag->name</a>
             </div>
             <p class="text-sm dark:text-gray-400">by
                 <a href="{{route('users.show', $post->author->id)}}" target="_blank" rel="noopener noreferrer" class="hover:underline dark:text-violet-400">
