@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class NavigationMenu extends Component
 {
     public array $menu;
+
     /**
      * Create a new component instance.
      *
@@ -25,11 +26,9 @@ class NavigationMenu extends Component
     public function render()
     {
         foreach ($this->menu as $key => $item) {
-
             $this->menu[$key]['active'] = request()->getRequestUri() === $item['url'];
         }
 
         return view('components.navigation-menu');
-
     }
 }

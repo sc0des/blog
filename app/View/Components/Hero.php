@@ -6,7 +6,6 @@ use Illuminate\View\Component;
 
 class Hero extends Component
 {
-
     /**
      * Create a new component instance.
      *
@@ -14,7 +13,6 @@ class Hero extends Component
      */
     public function __construct(public string $title)
     {
-
     }
 
     /**

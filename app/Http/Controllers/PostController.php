@@ -7,16 +7,17 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(Request $request) {
-
+    public function index(Request $request)
+    {
         $posts = Post::all();
-        return view('posts.index', compact('posts'));
 
+        return view('posts.index', compact('posts'));
     }
 
     public function show(int $id)
     {
         $post = Post::find($id);
+
         return view('posts.show', compact('post'));
     }
 }

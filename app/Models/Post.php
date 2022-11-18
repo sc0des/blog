@@ -25,5 +25,4 @@ class Post extends Model
     {
         return $this->belongsToMany(Comment::class);
     }
-
 }

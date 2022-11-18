@@ -20,8 +20,7 @@ return new class extends Migration
             $table->foreignId(column:'author_id');
             $table->string(column:'comment');
             $table->timestamp(column:'commented_at');
-            
-            
+
             $table->timestamps();
         });
     }

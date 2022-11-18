@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 // ======================== PUBLIC ROUTES ==============================
 
 // Welcome View
@@ -27,7 +26,3 @@ Route::resource('posts', \App\Http\Controllers\PostController::class);
 
 // Tags View
 Route::resource('tags', \App\Http\Controllers\TagsController::class);
-
-
-
-

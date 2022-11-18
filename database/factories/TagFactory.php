@@ -17,8 +17,8 @@ class TagFactory extends Factory
     public function definition()
     {
         return [
-            // unique tags 
-            'tag' => ucfirst(fake()->unique()->word(15))
+            // unique tags
+            'tag' => ucfirst(fake()->unique()->word(15)),
         ];
     }
 }

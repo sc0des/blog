@@ -17,7 +17,7 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            
+
             'title' => fake()->sentence(),
             'content' => fake()->realText(),
             'posted_at' => fake()->dateTimeBetween('-1 week', 'now'),

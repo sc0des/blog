@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use App\Models\Post;
-
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,10 +20,10 @@ class CommentFactory extends Factory
     {
         return [
 
-            //choses an id randomly for post and user            
-            'post_id'=> Post::all()->random()->id,
+            //choses an id randomly for post and user
+            'post_id' => Post::all()->random()->id,
             'author_id' => User::all()->random()->id,
-            'comment' => fake()->sentence(),           
+            'comment' => fake()->sentence(),
             'commented_at' => fake()->dateTimeBetween('-1 week', 'now'),
 
         ];

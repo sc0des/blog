@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
-   public function __invoke(Request $request)
-   {
+    public function __invoke(Request $request)
+    {
+        $posts = Post::all();
 
-    $posts = Post::all();
-    return view('welcome', compact('posts'));
-
-   }
+        return view('welcome', compact('posts'));
+    }
 }
