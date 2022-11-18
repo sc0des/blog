@@ -9,7 +9,7 @@ class Tag extends Model
 {
     use HasFactory;
 
-    /* One-to-Many */
+    /* Models Relations */
 
     public function posts()
     {
