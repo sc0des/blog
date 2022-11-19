@@ -37,6 +37,13 @@ class PostController extends Controller
 
     public function store(Request $request){
 
+
+        $validated = $request->validate([
+            'title' => 'required|min:6|max:255',
+            'content' => 'required|min:255|max:850',
+        ]);
+
+
         /* Store new created post*/
         Post::create([
             'title' => $request->title,
@@ -56,10 +63,14 @@ class PostController extends Controller
 
         $post =Post::find($id);
 
-        $post->update([
-            'title' => $request->title,
-            'content' => $request->content,
+        /* post validation */
+
+        $validated = $request->validate([
+            'title' => 'required|min:6|max:255',
+            'content' => 'required|min:255|max:850',
         ]);
+
+        $post->update($validated);
 
         return redirect()->route('posts.show',$post->id);
     }
