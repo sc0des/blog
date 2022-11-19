@@ -14,10 +14,6 @@ return [
             'url' => '/',
         ],
         [
-            'title' => 'About',
-            'url' => '/about',
-        ],
-        [
             'title' => 'Blogs',
             'url' => '/posts',
         ],
