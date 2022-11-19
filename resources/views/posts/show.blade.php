@@ -11,6 +11,7 @@
                     <span>{{$post->author->name}}</span>
                 </a>on {{$post->posted_at}}
             </p>
+            <span><a href="{{route('posts.edit', $post->id)}}" class="hover:underline dark:text-violet-400">Edit</a></span>
         </div>
         <div class="dark:text-gray-100">
             <p>{{$post->content}}</p>

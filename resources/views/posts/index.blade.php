@@ -1,4 +1,8 @@
 <x-site-layout title="Our Blogs">
+    <div>
+        <a href="{{route('posts.create')}}" class="px-8 py-3  font-semibold rounded dark:bg-gray-100 dark:text-gray-800 justify-end">+ New Writeup</a>
+    </div>
+
     @foreach($posts as $post)
             <div class="container max-w-4xl px-10 pt-12 pb-4 py-6 mx-auto rounded-lg shadow-sm dark:bg-gray-900 ">
                 <div class="flex items-center justify-between divide-y">
@@ -12,7 +16,7 @@
                 <div class="flex items-center justify-between mt-4">
                     <a rel="noopener noreferrer" href="{{route('posts.show', $post->id)}}" class="hover:underline dark:text-violet-400">Read more</a>
                     <div>
-                        <a rel="noopener noreferrer" href="#" class="flex items-center">
+                        <a rel="noopener noreferrer" href="{{route('users.show',$post->author->id)}}" class="flex items-center">
                             <img src="https://source.unsplash.com/50x50/?portrait" alt="avatar" class="object-cover w-10 h-10 mx-4 rounded-full dark:bg-gray-500">
                             <span class="hover:underline dark:text-gray-400">{{$post->author->name}}</span>
                         </a>
