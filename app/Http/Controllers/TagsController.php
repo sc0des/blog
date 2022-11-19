@@ -11,7 +11,7 @@ class TagsController extends Controller
     {
         $tags = Tag::all();
 
-        return view('tags', compact('tags'));
+        return view('tags.index', compact('tags'));
     }
 
     public function show(int $id)
