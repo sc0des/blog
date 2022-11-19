@@ -13,7 +13,6 @@ class WelcomeController extends Controller
         $posts = Post::latest()->take(2)->get();
         $users = User::latest()->take(3)->get();
 
-        return view('welcome', compact('posts','users'));
+        return view('welcome', compact('posts', 'users'));
     }
-
 }

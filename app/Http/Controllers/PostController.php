@@ -11,7 +11,6 @@ class PostController extends Controller
     {
         $posts = Post::all();
 
-
         return view('posts.index', compact('posts'));
     }
 
@@ -22,33 +21,32 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 
-    public function create(){
-
+    public function create()
+    {
         return view('posts.create');
     }
 
-    public function edit($id){
-
+    public function edit($id)
+    {
         /* edit created post*/
 
-        $post =Post::find($id);
+        $post = Post::find($id);
+
         return view('posts.edit', compact('post'));
     }
 
-    public function store(Request $request){
-
-
+    public function store(Request $request)
+    {
         $validated = $request->validate([
             'title' => 'required|min:6|max:255',
             'content' => 'required|min:255|max:850',
         ]);
 
-
         /* Store new created post*/
         Post::create([
             'title' => $request->title,
             'content' => $request->content,
-            'featured_image'=> null,
+            'featured_image' => null,
             'posted_at' => now(),
             'author_id' => 1,
             'tag_id' => 1,
@@ -57,11 +55,11 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
-    public function update($id,Request $request){
-
+    public function update($id, Request $request)
+    {
         /* update and store created post*/
 
-        $post =Post::find($id);
+        $post = Post::find($id);
 
         /* post validation */
 
@@ -72,8 +70,6 @@ class PostController extends Controller
 
         $post->update($validated);
 
-        return redirect()->route('posts.show',$post->id);
+        return redirect()->route('posts.show', $post->id);
     }
-
-
 }
