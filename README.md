@@ -1,13 +1,18 @@
 # Writeup Blog
 
-A simple laravel based blog for CTF writeups
+A simple web application blog for CTF writeups, where users can write, read and share their writups with others. 
 
 ## Key Features
 
+- Routing
+- Post CRUD
 - Navigation
+- Middleware (soon)
+- MVC Framework
 - Responsive Layout
 - Authorisation (soon)
 - Admin Dashboard (soon)
+
 
 ## Getting Started
 
@@ -25,7 +30,7 @@ A simple laravel based blog for CTF writeups
 
 ## Run Locally
 
-Clone the project
+Clone the project into
 
 ```bash
   git clone https://github.com/sc0des/blog.git
@@ -37,7 +42,12 @@ Go to the project directory
   cd blog
 ```
 
-... 
+Install packages 
+
+```bash
+  composer install
+```
+
 
 
 
