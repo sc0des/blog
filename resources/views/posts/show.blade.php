@@ -21,11 +21,14 @@
     <div class="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
         <form method="post" action="/posts/{{$post->id}}/comments" class=" rounded-xl w-full pt-5 space-y-1 dark:text-gray-100">
             @csrf
+
             <div class="flex">
-                <input type="text" name="comment"  placeholder="  your thought about the blog ... " class="flex flex-1 border sm:text-sm focus:ring-inset dark:border-gray-700 dark:text-gray-100 dark:bg-gray-800 focus:ring-violet-400">
+                <input type="text" name="comment" id="comment"  placeholder="  " class="flex flex-1 border sm:text-sm focus:ring-inset dark:border-gray-700 dark:text-gray-100 dark:bg-gray-800 focus:ring-violet-400">
                 <button type="submit" class="flex items-center px-3 sm:text-sm rounded-r-md dark:bg-gray-700">Comment</button>
             </div>
         </form>
+        
+        @error('comment') <span class="text-red-500">{{$errors}}</span> @enderror
 
         @foreach($post-> comments as $comment)
         <x-comment :comment="$comment"> </x-comment>
