@@ -21,7 +21,6 @@ return new class extends Migration
             $table->timestamp(column:'commented_at');
             $table->timestamps();
 
-
             $table->foreign('post_id')->references('id')->on('posts')->cascadeOnDelete();
         });
     }

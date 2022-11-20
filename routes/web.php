@@ -25,10 +25,12 @@ Route::resource('users', \App\Http\Controllers\WritersController::class);
 
 // Blog Posts View
 Route::resource('posts', \App\Http\Controllers\PostController::class);
-Route::post('posts/{post:id}/comments', [CommentController::class,'store']);
+Route::post('posts/{post:id}/comments', [CommentController::class, 'store']);
 
 // Tags View
 Route::resource('tags', \App\Http\Controllers\TagsController::class);
+
+// Log
 
 Route::get('/dashboard', function () {
     return view('dashboard');

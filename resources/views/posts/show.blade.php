@@ -27,7 +27,7 @@
                 <button type="submit" class="flex items-center px-3 sm:text-sm rounded-r-md dark:bg-gray-700">Comment</button>
             </div>
         </form>
-        
+
         @error('comment') <span class="text-red-500">{{$errors}}</span> @enderror
 
         @foreach($post-> comments as $comment)
