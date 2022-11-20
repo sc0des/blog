@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,7 @@ Route::resource('users', \App\Http\Controllers\WritersController::class);
 
 // Blog Posts View
 Route::resource('posts', \App\Http\Controllers\PostController::class);
+Route::post('posts/{post:id}/comments', [CommentController::class,'store']);
 
 // Tags View
 Route::resource('tags', \App\Http\Controllers\TagsController::class);

@@ -7,7 +7,7 @@
         </div>
         <div>
             <h4 class="font-bold">{{$comment->author->name}}</h4>
-            <span class="text-xs dark:text-gray-400">{{$comment->created_at}}</span>
+            <span class="text-xs dark:text-gray-400">{{$comment->created_at->format('j M, Y, g:i a')}}</span>
         </div>
     </div>
 </div>
