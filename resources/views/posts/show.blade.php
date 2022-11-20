@@ -17,8 +17,18 @@
             <p>{{$post->content}}</p>
         </div>
     </article>
-    <h2 class="text-lg font-semibold text-center ">Comments</h2>
+    <h3 class="text-m font-semibold text-center ">Comments</h3>
     <div class="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
-        <x-comment> </x-comment>
+        <form method="post" action="{{route('posts.store', $post->id)}}" class=" rounded-xl w-full pt-5 space-y-1 dark:text-gray-100">
+            @csrf
+            <div class="flex">
+                <input type="text" name="url"  placeholder="  your thought about the blog ... " class="flex flex-1 border sm:text-sm focus:ring-inset dark:border-gray-700 dark:text-gray-100 dark:bg-gray-800 focus:ring-violet-400">
+                <button type="submit" class="flex items-center px-3 pointer-events-none sm:text-sm rounded-r-md dark:bg-gray-700">Comment</button>
+            </div>
+        </form>
+
+        @foreach($post-> comments as $comment)
+        <x-comment :comment="$comment"> </x-comment>
+        @endforeach
     </div>
 </x-site-layout>
