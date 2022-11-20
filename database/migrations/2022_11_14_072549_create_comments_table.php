@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-
             $table->foreignId(column:'post_id');
             $table->foreignId(column:'author_id');
             $table->string(column:'comment');
             $table->timestamp(column:'commented_at');
-
             $table->timestamps();
+
+
+            $table->foreign('post_id')->references('id')->on('posts')->cascadeOnDelete();
         });
     }
 
