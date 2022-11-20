@@ -35,7 +35,7 @@
             </div>
         </section>
 
-        <div class="px-10 py-20 dark:bg-gray-800 dark:text-gray-50"></div>       
+        <div class="px-10 py-20 dark:bg-gray-800 dark:text-gray-50"></div>
 
         <!-- Footer-->
         <x-footer/>
