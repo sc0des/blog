@@ -2,9 +2,7 @@
     <article class="max-w-2xl px-6 py-24 mx-auto space-y-16 dark:text-gray-50">
         <div class="w-full mx-auto space-y-4">
             <div class="flex flex-wrap space-x-2 text-sm dark:text-gray-400">
-                @foreach($post->tags as $tag)
-                    <a rel="noopener noreferrer" href="#" class="p-1 hover:underline">{{$tag->name}}</a>
-                @endforeach
+                <span class="p-1 hover:underline">Tag : {{$post->tags->pluck('tag')->implode(',')}}</span>
             </div>
             <p class="text-sm dark:text-gray-400">by
                 <a href="{{route('users.show', $post->author->id)}}" target="_blank" rel="noopener noreferrer" class="hover:underline dark:text-violet-400">

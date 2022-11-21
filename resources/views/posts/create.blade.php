@@ -10,7 +10,9 @@
                 <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
 
                     <div class="col-span-full sm:col-span-3">
-                        <x-post-input name="title" label="Blog Post Title" placeholder="exciting title" value="" :errors="$errors"/>
+                        <x-post-input name="title" label="Post Title" placeholder=" Exciting title" value="" :errors="$errors"/>
+                        <x-post-input name="tag_id" label="Tag ID" placeholder="  " value="" />
+
                     </div>
 
                     <div class="col-span-full">

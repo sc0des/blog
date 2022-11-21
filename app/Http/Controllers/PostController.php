@@ -44,13 +44,13 @@ class PostController extends Controller
         ]);
 
         /* Store new created post*/
-        Post::create([
+        $post=Post::create([
             'title' => $request->title,
             'content' => $request->content,
             'featured_image' => null,
             'posted_at' => now(),
             'author_id' => 1,
-            'tag_id' => 1,
+            'tag_id' => $request->tag_id,
         ]);
 
         return redirect()->route('posts.index');
