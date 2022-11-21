@@ -38,16 +38,4 @@
             </div>
         </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
 </x-site-layout>

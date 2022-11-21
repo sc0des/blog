@@ -30,11 +30,18 @@ Route::post('posts/{post:id}/comments', [CommentController::class, 'store']);
 // Tags View
 Route::resource('tags', \App\Http\Controllers\TagsController::class);
 
-// Log
+
+require __DIR__.'/auth.php';
+
+// Logging Routes
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -42,4 +49,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
