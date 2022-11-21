@@ -7,11 +7,11 @@ A simple web application blog for CTF writeups, where users can write, read and 
 - Routing
 - Post CRUD
 - Navigation
-- Middleware (soon)
+- Middleware 
 - MVC Framework
 - Responsive Layout
-- Authorisation (soon)
-- Admin Dashboard (soon)
+- Authorisation 
+- Admin Dashboard (in progress)
 
 
 ## Getting Started
