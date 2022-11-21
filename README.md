@@ -42,13 +42,40 @@ Go to the project directory
 ```bash
   cd blog
 ```
+Before composer installation make sure you have
 
-Install packages 
+* Laragon running 
+
+* Created a new database 
+
+* Copied .env example to local directory
+
+* Edited .env with database configurations
+
+
+Install composer packages 
 
 ```bash
   composer install
 ```
 
+Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+Migrate database 
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+Run the  application 
+
+```bash
+php artisan serve
+```
 
 
 
@@ -56,7 +83,7 @@ Install packages
 
 
 
-## Template Resources
+## Resources
 
 - [Template Componenets](https://mambaui.com/)
 
