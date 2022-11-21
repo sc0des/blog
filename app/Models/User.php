@@ -52,13 +52,11 @@ class User extends Authenticatable
         // adds profile for the user
 
         static::created(function ($user) {
-
             Profile::create([
                 'user_id' => $user->id,
             ]);
         });
     }
-
 
     /* Models Relations */
 

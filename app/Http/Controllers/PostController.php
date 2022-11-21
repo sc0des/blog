@@ -9,14 +9,13 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('author')->orderBy('posted_at','DESC')->get();
+        $posts = Post::with('author')->orderBy('posted_at', 'DESC')->get();
 
         return view('posts.index', compact('posts'));
     }
 
     public function show(int $id)
     {
-
         $post = Post::find($id);
 
         return view('posts.show', compact('post'));
@@ -44,7 +43,7 @@ class PostController extends Controller
         ]);
 
         /* Store new created post*/
-        $post=Post::create([
+        $post = Post::create([
             'title' => $request->title,
             'content' => $request->content,
             'featured_image' => null,
