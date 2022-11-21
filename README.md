@@ -1,16 +1,17 @@
 # Writeup Blog
 
 A simple web application blog for CTF writeups, where users can write, read and share their writups with others. 
+Also, users can comment on wrtieups!
 
 ## Key Features
 
+- CRUD
 - Routing
-- Post CRUD
 - Navigation
-- Middleware 
 - MVC Framework
 - Responsive Layout
-- Authorisation 
+- Mail and Notification (soon)
+- Authorisation Middleware
 - Admin Dashboard (in progress)
 
 
@@ -55,7 +56,7 @@ Install packages
 
 
 
-## Resources
+## Template Resources
 
 - [Template Componenets](https://mambaui.com/)
 
