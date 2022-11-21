@@ -9,13 +9,14 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::with('author')->orderBy('posted_at','DESC')->get();
 
         return view('posts.index', compact('posts'));
     }
 
     public function show(int $id)
     {
+
         $post = Post::find($id);
 
         return view('posts.show', compact('post'));
