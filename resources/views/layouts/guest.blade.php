@@ -16,6 +16,9 @@
         <!-- Tailwind -->
         <script src="https://cdn.tailwindcss.com"></script>
 
+        <!-- Script -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
