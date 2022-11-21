@@ -42,7 +42,30 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /*  Model Events  */
+
+    protected static function booted()
+    {
+        static::creating(function ($user) {
+        });
+
+        // adds profile for the user
+
+        static::created(function ($user) {
+
+            Profile::create([
+                'user_id' => $user->id,
+            ]);
+        });
+    }
+
+
     /* Models Relations */
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
 
     public function posts()
     {
