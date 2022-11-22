@@ -3,7 +3,6 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -47,7 +46,7 @@ class WelcomeAdminNotification extends Notification
                     ->subject('Alert: New User ')
                     ->greeting('Dear '.$notifiable->name.',')
                     ->line('This a notifcation that a new user is joined on our blog platform')
-                    ->action(' Check out new profile ', url(route('users.show',$this->new_user->id)))
+                    ->action(' Check out new profile ', url(route('users.show', $this->new_user->id)))
                     ->line('Thank you for using our application!')
                     ->salutation('Kind Regards , Writups Team ');
     }

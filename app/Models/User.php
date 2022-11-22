@@ -52,7 +52,6 @@ class User extends Authenticatable
 
         // adds profile for the user
         static::created(function ($user) {
-
             $admins = User::where('is_admin', '=', 1)->get();
             foreach ($admins as $admin) {
                 $admin->notify(new WelcomeAdminNotification($user));
@@ -61,8 +60,6 @@ class User extends Authenticatable
             Profile::create([
                 'user_id' => $user->id,
             ]);
-
-
         });
     }
 

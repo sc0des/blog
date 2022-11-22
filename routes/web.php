@@ -46,7 +46,4 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 // Admin Routes
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-
 });
-
-

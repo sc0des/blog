@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-
 class PostController extends Controller
 {
     public function index()
@@ -41,7 +40,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required|min:6|max:255',
             'content' => 'required|min:255|max:850',
-            'featured_image' => ['nullable','image','file'],
+            'featured_image' => ['nullable', 'image', 'file'],
         ]);
 
         /* Store new created post*/
@@ -53,12 +52,9 @@ class PostController extends Controller
             'tag_id' => $request->tag_id,
         ]);
 
-        if($request->hasFile('image') && $request->file('image')->isValid()){
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $post->addMediaFromRequest('image')->toMediaCollection('image');
         }
-
-
-
 
         return redirect()->route('posts.index');
     }
@@ -74,7 +70,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required|min:6|max:255',
             'content' => 'required|min:255|max:850',
-            'featured_image' => ['nullable','image','file'],
+            'featured_image' => ['nullable', 'image', 'file'],
         ]);
 
         $post->update($validated);

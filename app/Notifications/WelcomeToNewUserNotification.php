@@ -53,6 +53,7 @@ class WelcomeToNewUserNotification extends Notification
                     ->line('Thank you for using our platform!')
                     ->salutation('Kind Regards , Writups Team ');
     }
+
     /**
      * Get the array representation of the notification.
      *

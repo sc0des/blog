@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
         ]);
 
         // new user notifiaction
-        $new_posts=\App\Models\Post::latest()->take(2)->get();
+        $new_posts = \App\Models\Post::latest()->take(2)->get();
         $user->notify(new WelcomeToNewUserNotification($new_posts));
 
         event(new Registered($user));
