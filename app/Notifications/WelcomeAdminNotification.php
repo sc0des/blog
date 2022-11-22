@@ -3,24 +3,25 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class WelcomeToNewUserNotification extends Notification
+class WelcomeAdminNotification extends Notification
 {
     use Queueable;
 
-    public $posts;
+    public $new_user;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($posts)
+    public function __construct($new_user)
     {
         //
-        $this->posts = $posts;
+        $this->new_user = $new_user;
     }
 
     /**
@@ -42,17 +43,15 @@ class WelcomeToNewUserNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        //new registered user notifaction email message
-
         return (new MailMessage)
-                    ->subject('Thank you for using our blog')
-                    ->line('Welcome to Writeups')
+                    ->subject('Alert: New User ')
                     ->greeting('Dear '.$notifiable->name.',')
-                    ->line('iTS AMAZING that you have joined to our platform blog sevices, you will get amazing posts from amazing writers!')
-                    ->action('Read latest posts ', url(route('posts.index')))
-                    ->line('Thank you for using our platform!')
+                    ->line('This a notifcation that a new user is joined on our blog platform')
+                    ->action(' Check out new profile ', url(route('users.show',$this->new_user->id)))
+                    ->line('Thank you for using our application!')
                     ->salutation('Kind Regards , Writups Team ');
     }
+
     /**
      * Get the array representation of the notification.
      *
