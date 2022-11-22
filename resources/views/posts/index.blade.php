@@ -2,7 +2,6 @@
     <div>
         <a href="{{route('posts.create')}}" class="px-8 py-3  font-semibold rounded dark:bg-gray-100 dark:text-gray-800 justify-end">+ New Writeup</a>
     </div>
-
     @foreach($posts as $post)
         <div class="container max-w-4xl px-10 pt-12 pb-4 py-6 mx-auto rounded-lg shadow-sm dark:bg-gray-900 ">
             <div class="flex items-center justify-between divide-y">
@@ -24,6 +23,10 @@
             </div>
         </div>
     @endforeach
+    <div class="container dark:text-gray-400 max-w-4xl px-10 pt-20 pb-4 py-6 mx-auto rounded-lg shadow-sm dark:bg-gray-900 ">
+        {{$posts->links()}}
+    </div>
+
 </x-site-layout>
 
 
