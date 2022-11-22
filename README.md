@@ -1,6 +1,6 @@
 # Writeup Blog
 
-A simple web application blog for CTF writeups, where users can write, read and share their writups with others. 
+A simple web application blog for CTF writeups, where users can write, read and share their writeups with others. 
 Also, users can comment on wrtieups!
 
 ## Key Features
