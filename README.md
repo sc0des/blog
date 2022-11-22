@@ -8,6 +8,7 @@ Also, users can comment on wrtieups!
 - CRUD
 - Routing
 - Navigation
+- Pagination
 - MVC Framework
 - Store Media Files (in progress)
 - Responsive Layout
@@ -90,10 +91,11 @@ php artisan serve
 
 
 
-## Resources
+## Useful Resources
 
+- [Laravel Tutorial](https://laracasts.com/series/laravel-8-from-scratch)
 - [Template Componenets](https://mambaui.com/)
-- [Media Library](https://spatie.be/docs/laravel-medialibrary/v10/introduction)
+
 
 ## Authors
 
