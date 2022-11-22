@@ -8,17 +8,12 @@
                     </div>
 
                     <ul class="flex flex-wrap items-center space-x-4 sm:space-x-8">
-                        {{--
-                        @foreach($menu as $item)
-                        <li><a rel="noopener noreferrer" href="{{$item['url']}}">{{$item['title']}}</a></li>
-                        @endforeach --}}
-                    </ul>
-                </div>
-                    <ul class="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
                         @foreach($footers as $item)
-                        <li><a rel="noopener noreferrer" href="{{$item['url']}}">{{$item['title']}}</a></li>
+                            <li><a rel="noopener noreferrer" href="{{$item['url']}}">{{$item['title']}}</a></li>
                         @endforeach
                     </ul>
+                </div>
+                <div class="py-12 text-sm text-center dark:text-gray-400 border-gray-100">© Copyright 2022 . All Rights Reserved.</div>
+
             </div>
-    <div class="py-12 text-sm text-center dark:text-gray-400 border-gray-100">© Copyright 2022 . All Rights Reserved.</div>
-</footer>
+    </footer>

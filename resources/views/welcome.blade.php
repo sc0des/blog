@@ -13,7 +13,7 @@
             <div class="flex items-center justify-between mt-4">
                 <a rel="noopener noreferrer" href="{{route('posts.show', $post->id)}}" class="hover:underline dark:text-violet-400">Read more</a>
                 <div>
-                    <a rel="noopener noreferrer" href="#" class="flex items-center">
+                    <a rel="noopener noreferrer" href="{{route('users.show', $post->author->id)}}" class="flex items-center">
                         <img src="https://i.pravatar.cc/150?u={{$post->author->id}}"  class="object-cover w-10 h-10 mx-4 rounded-full dark:bg-gray-500">
                         <span class="hover:underline dark:text-gray-400">{{$post->author->name}}</span>
                     </a>
@@ -26,12 +26,12 @@
         <section class="py-6 pt-30 dark:bg-gray-750">
             <div class="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
                 <h1 class="text-4xl font-bold leading-none text-center sm:text-5xl">Our Writers</h1>
-                <p class="max-w-2xl text-center dark:text-gray-400">At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur quam natus quis nihil quod, hic explicabo doloribus magnam neque, exercitationem eius sunt!</p>
+                <p class="max-w-2xl text-center dark:text-gray-400">Here are TOP 3 writer. Who knows, one of these writers might become your new favorite.</p>
                 <div class="flex flex-row flex-wrap-reverse justify-center">
                     @foreach($users as $user)
                     <div class="flex flex-col justify-center m-8 text-center">
                         <img alt="" class="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://i.pravatar.cc/150?u={{$user->id}}">
-                        <p class="text-xl font-semibold leading-tight">{{$user->name}}</p>
+                        <a rel="noopener noreferrer" href="{{route('users.show', $user->id)}}" class="flex hover:underline items-center "><p class="text-xl font-semibold leading-tight">{{$user->name}}</p></a>
                     </div>
                     @endforeach
 

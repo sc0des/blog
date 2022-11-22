@@ -35,6 +35,22 @@ return [
 
     'footers' => [
         [
+            'title' => 'Welcome',
+            'url' => '/',
+        ],
+        [
+            'title' => 'Blogs',
+            'url' => '/posts',
+        ],
+        [
+            'title' => 'Users',
+            'url' => '/users',
+        ],
+        [
+            'title' => 'Tags',
+            'url' => '/tags',
+        ],
+        [
             'title' => 'Terms of Use',
             'url' => '/terms',
         ],
