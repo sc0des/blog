@@ -50,7 +50,7 @@ class User extends Authenticatable
         static::creating(function ($user) {
         });
 
-        // adds profile for the admin
+        // adds profile for the user
         static::created(function ($user) {
 
             $admins = User::where('is_admin', '=', 1)->get();
