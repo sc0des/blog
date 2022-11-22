@@ -9,8 +9,9 @@ Also, users can comment on wrtieups!
 - Routing
 - Navigation
 - MVC Framework
+- Store Media Files (in progress)
 - Responsive Layout
-- Mail and Notification (soon)
+- Mail and Notification (in progress)
 - Authorisation Middleware
 - Admin Dashboard (in progress)
 
@@ -69,6 +70,12 @@ Migrate database
 
 ```bash
 php artisan migrate:fresh --seed
+```
+
+Link to storage for media files
+
+```bash
+php artisan storage:link
 ```
 
 Run the  application 
