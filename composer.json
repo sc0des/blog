@@ -14,7 +14,9 @@
         "laravel/tinker": "^2.7",
         "spatie/laravel-medialibrary": "^10.0.0",
         "spatie/laravel-ray": "^1.31",
-        "symfony/mailer": "^6.1"
+        "symfony/http-client": "^6.1",
+        "symfony/mailer": "^6.1",
+        "symfony/postmark-mailer": "^6.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",
