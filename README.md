@@ -3,18 +3,22 @@
 A simple web application blog for CTF writeups, where users can write, read and share their writups with others. 
 Also, users can comment on wrtieups!
 
-## Key Features
+### Overview
+
+The application is consist of 5 main models that are ( User, Profile, Post, Tag, Comment). The relation between models ranges from one-to-many and many-many.
+
+### Key Features
 
 - CRUD
 - Routing
 - Navigation
 - Pagination
 - MVC Framework
-- Store Media Files (in progress)
+- Store Media Files ( need fix for view)
 - Responsive Layout
-- Mail and Notification (in progress)
+- Mail and Notification ( add )
 - Authorisation Middleware
-- Admin Dashboard (in progress)
+- Admin/Profile Dashboard 
 
 
 ## Getting Started
@@ -79,19 +83,30 @@ Link to storage for media files
 php artisan storage:link
 ```
 
+Other dependencies (optional) *
+
+```bash
+npm install
+npm run dev
+```
+
 Run the  application 
 
 ```bash
 php artisan serve
 ```
 
+To access admin dashboard for the application use the following credentials 
+
+- username:admin
+- passworrd:admin123
 
 
 ## Screenshots
 
 
 
-## Useful Resources
+### Useful Resources
 
 - [Laravel Tutorial](https://laracasts.com/series/laravel-8-from-scratch)
 - [Template Componenets](https://mambaui.com/)
@@ -102,7 +117,7 @@ php artisan serve
 - [@sc0des](https://github.com/sc0des)
 
 
-## Acknowledgements
+### Acknowledgements
 
   Thank you to [ndeblauw](https://github.com/ndeblauw) for introducing and teaching Laravel Framework.
 

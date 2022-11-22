@@ -27,7 +27,7 @@
         <!-- Hero -->
         <x-hero :title="$title"/>
 
-        <div class="px-10 py-4 dark:bg-gray-800 dark:text-gray-50"></div>
+        <div class="px-10 pt-20 py-4 dark:bg-gray-800 dark:text-gray-50"></div>
 
         <!--Main Slot-->
         <section class="dark:bg-gray-800 dark:text-gray-50">

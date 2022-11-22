@@ -28,12 +28,12 @@
                             @if (Route::has('login'))
                                 <div class="hidden top-0 right-0 px-6 py-4 sm:block">
                                     @auth
-                                        <a href="{{ url('/dashboard') }}" class="text-white bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                                        <a href="{{ url('/dashboard') }}" class="text-white text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                                     @else
-                                        <a href="{{ route('login') }}" class="text-white bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Log in</a>
+                                        <a href="{{ route('login') }}" class="text-white  text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Log in</a>
 
                                         @if (Route::has('register'))
-                                            <a href="{{ route('register') }}" class="text-white bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
+                                            <a href="{{ route('register') }}" class="text-white  text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
                                         @endif
                                     @endauth
                                 </div>
