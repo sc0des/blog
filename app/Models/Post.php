@@ -25,7 +25,7 @@ class Post extends Model implements HasMedia
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class)->as('tags');
     }
 
     public function comments()
