@@ -8,13 +8,14 @@
 
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                        @foreach($menu as $item)
-                            <a href="{{$item['url']}}" class=" text-white @if($item['active']) bg-gray-900 text-gray-300 @else hover:bg-gray-700 @endif hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$item['title']}}</a>
-                        @endforeach
-                        @auth
-                            <a href="{{route('dashboard')}}" class=" text-white @if($item['active']) bg-gray-900 text-gray-300 @else hover:bg-gray-700 @endif hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        @endauth
+                            @auth
+                                <a href="{{route('dashboard')}}" class=" text-white @if($item['active']) bg-gray-900 text-gray-300 @else hover:bg-gray-700 @endif hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                            @endauth
+                            @foreach($menu as $item)
+                                <a href="{{$item['url']}}" class=" text-white @if($item['active']) bg-gray-900 text-gray-300 @else hover:bg-gray-700 @endif hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$item['title']}}</a>
+                            @endforeach
                         </div>
+
                     </div>
 
                 </div>
@@ -22,12 +23,12 @@
                     @if (Route::has('login'))
                         <div class="hidden top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-50 dark:text-gray-500 underline">Home</a>
+                                <a href="{{ url('/dashboard') }}" class="text-white bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                             @else
-                                <a href="{{ route('login') }}" class="text-sm text-red-50 dark:text-gray-500 underline">Log in</a>
+                                <a href="{{ route('login') }}" class="text-white bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Log in</a>
 
                                 @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="ml-4 text-sm text-red-50 dark:text-gray-500 underline">Register</a>
+                                    <a href="{{ route('register') }}" class="text-white bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
                                 @endif
                             @endauth
                         </div>
@@ -54,8 +55,6 @@
                         <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                             <!-- Active: "bg-gray-100", Not Active: "" -->
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Profile</a>
-
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
 
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
                         </div>
@@ -96,6 +95,16 @@
         @foreach($menu as $item)
         <a href="{{$item['url']}}" class= "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">{{$item['title']}}</a>
         @endforeach
+          @auth
+              <a href="{{ url('/dashboard') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+          @else
+              <a href="{{ route('login') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Log in</a>
+
+              @if (Route::has('register'))
+                  <a href="{{ route('register') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Register</a>
+              @endif
+          @endauth
+
 
       </div>
       <div class="border-t border-gray-700 pt-4 pb-3">
@@ -117,8 +126,6 @@
         </div>
         <div class="mt-3 space-y-1 px-2">
           <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your Profile</a>
-
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
 
           <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign out</a>
         </div>
