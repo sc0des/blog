@@ -25,4 +25,6 @@ class PostFactory extends Factory
             'tag_id' => fake()->numberBetween(1, 10),
         ];
     }
+
+
 }

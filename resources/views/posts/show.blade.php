@@ -12,6 +12,7 @@
             <span><a href="{{route('posts.edit', $post->id)}}" class="hover:underline dark:text-violet-400">Edit</a></span>
         </div>
         <div class="dark:text-gray-100">
+            <img src="{{$post->getFirstMediaUrl('image', 'thumb')}}"  width="120px">
             <p>{{$post->content}}</p>
         </div>
     </article>

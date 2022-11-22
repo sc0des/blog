@@ -1,6 +1,6 @@
 <x-site-layout title="New Writup">
     <section class="p-6 dark:text-gray-50">
-        <form action="{{route('posts.store')}}" class="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid" method="post">
+        <form action="{{route('posts.store')}}" enctype="multipart/form-data"  class="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid" method="post">
             @csrf
             <div class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
                 <div class="space-y-2 col-span-full lg:col-span-1">
@@ -17,6 +17,9 @@
 
                     <div class="col-span-full">
                         <x-post-text-input name="content" label="Blog Post Content" placeholder=" write something ... " value="" :errors="$errors"/>
+                    </div>
+                    <div class="col-span-full">
+                        <x-post-file-input name="image" label="Post Image" />
                     </div>
                 </div>
             </div>

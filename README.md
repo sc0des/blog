@@ -93,7 +93,7 @@ php artisan serve
 ## Resources
 
 - [Template Componenets](https://mambaui.com/)
-
+- [Media Library](https://spatie.be/docs/laravel-medialibrary/v10/introduction)
 
 ## Authors
 
