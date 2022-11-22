@@ -46,7 +46,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        // user notifiaction
+        // new user notifiaction
         $new_posts=\App\Models\Post::latest()->take(2)->get();
         $user->notify(new WelcomeToNewUserNotification($new_posts));
 

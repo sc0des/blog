@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Notifications\WelcomeAdminNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -49,12 +50,19 @@ class User extends Authenticatable
         static::creating(function ($user) {
         });
 
-        // adds profile for the user
-
+        // adds profile for the admin
         static::created(function ($user) {
+
+            $admins = User::where('is_admin', '=', 1)->get();
+            foreach ($admins as $admin) {
+                $admin->notify(new WelcomeAdminNotification($user));
+            }
+
             Profile::create([
                 'user_id' => $user->id,
             ]);
+
+
         });
     }
 
