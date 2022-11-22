@@ -33,20 +33,20 @@ Route::resource('tags', \App\Http\Controllers\TagsController::class);
 require __DIR__.'/auth.php';
 
 // Logged Routes
-
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-});
 
-// Admin Routes
-
-Route::middleware(['auth', 'isAdmin'])->group(function () {
-});
-
-Route::middleware('auth')->group(function () {
+    //editing profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Admin Routes
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+
+});
+
+
