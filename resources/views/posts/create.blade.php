@@ -11,8 +11,16 @@
 
                     <div class="col-span-full sm:col-span-3">
                         <x-post-input name="title" label="Post Title" placeholder=" Exciting title" value="" :errors="$errors"/>
-                        <x-post-input name="tag_id" label="Tag ID" placeholder="  " value="" />
 
+                        <label for="tag_id" class="text-sm ">Tag</label>
+                        <select name="tag_id" class="text-gray-700 block px-4 py-2 text-sm">
+                            @foreach($tags as $tag)
+                            <option value="{{$tag->id}}">{{$tag->tag}}</option>
+                            @endforeach
+                        </select>
+
+                        <!--<x-post-input name="tag_id" label="Tag ID" placeholder="  " value="" />
+                            -->
                     </div>
 
                     <div class="col-span-full">
