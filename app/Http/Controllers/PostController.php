@@ -14,10 +14,10 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
-    public function show(int $id)
+    public function show(Post  $post)
     {
-        $post = Post::find($id);
 
+        $post->load('media', 'author', 'tags');
         return view('posts.show', compact('post'));
     }
 
