@@ -52,7 +52,7 @@ class PostController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'posted_at' => now(),
-            'author_id' => 1,
+            'author_id' => auth()->user()->id,
             'tag_id' => $request->tag_id,
         ]);
 
@@ -94,7 +94,7 @@ class PostController extends Controller
         /* delete post*/
 
         $post = Post::findOrFail($id)->delete();
-        return redirect()->back();
+        return redirect()->route('posts.index');
 
 
     }

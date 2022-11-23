@@ -18,7 +18,7 @@ class CommentController extends Controller
         $post->comments()->create([
             'comment' => request()->comment,
             'commented_at' => now(),
-            'author_id' => 1,
+            'author_id' => auth()->user()->id,
         ]);
 
         return back();
