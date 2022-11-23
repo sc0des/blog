@@ -12,14 +12,14 @@ class WelcomeController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $users = Cache::remember('welcome.users', 200, function () {
-            return User::inRandomOrder()->take(3)->get();
+        $users = Cache::remember('welcome.users', 250, function () {
+            return User::has('posts')->with('posts')->latest()->take(3)->get();
         });
 
-        $posts = Cache::remember('welcome.posts', 210, function () {
-            return Post::latest()->take(2)->get();
-        });
+        $posts = Cache::remember('welcome.posts', 250, function () {
+            return Post::with('media')->latest()->take(2)->get();
 
+        });
 
         return view('welcome', compact('posts', 'users'));
     }
