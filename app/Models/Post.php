@@ -37,7 +37,7 @@ class Post extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this
-            ->addMediaConversion('post_image')
+            ->addMediaConversion('thumbnail')
             ->fit(Manipulations::FIT_CROP, 500, 500)
             ->nonQueued();
     }

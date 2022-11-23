@@ -3,7 +3,7 @@
     <article class="max-w-2xl px-6 py-24 mx-auto space-y-16 dark:text-gray-50">
         <div class="w-full mx-auto space-y-4">
             <div class="flex flex-wrap space-x-2 text-sm dark:text-gray-400">
-                <span class="p-1 hover:underline">Tag : {{$post->tag_id}}</span>
+                <span class="p-1 hover:underline">Tag : {{$post->tags}}</span>
             </div>
             <p class="text-sm dark:text-gray-400 py-2">by
                 <a href="{{route('users.show', $post->author->id)}}" target="_blank" rel="noopener noreferrer" class="hover:underline dark:text-violet-400">
