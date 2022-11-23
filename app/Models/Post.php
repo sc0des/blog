@@ -60,6 +60,10 @@ class Post extends Model implements HasMedia
             }
 
         });
+
+        static::saved(function ($post) {
+            Cache::forget('welcome.posts');
+        });
     }
 
 }
