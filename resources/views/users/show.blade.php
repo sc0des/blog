@@ -14,7 +14,7 @@
             <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
                 @foreach($user->posts as $post)
                     <article class="flex flex-col dark:bg-gray-900">
-                        <img alt="" class="object-cover w-full h-52 dark:bg-gray-500" src="{{$post->getUrl('thumbnail')}}">
+                        <img alt="" class="object-cover w-full h-52 dark:bg-gray-500" src="{{$post->getFirstMediaUrl('thumbnail')}}">
                         <div class="flex flex-col flex-1 p-6">
                             <a rel="noopener noreferrer" href="{{route('posts.show', $post->id)}}" aria-label="Te nulla oportere reprimique his dolorum">
                                 <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">{{$post->title}}</h3></a>

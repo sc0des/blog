@@ -20,7 +20,7 @@
                 </button>
             </form>
         <div class="dark:text-gray-100">
-            <img src="{{$post->getFirstMediaUrl('image', 'thumb')}}"  width="120px">
+            <img src="{{$post->getFirstMediaUrl('thumbnail')}}"  width="120px">
             <p>{{$post->content}}</p>
         </div>
     </article>
