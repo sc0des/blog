@@ -9,9 +9,6 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <!-- Stylesheets -->
-        <link href="css/styles.css" rel="stylesheet">
-
         <!-- Tailwind -->
         <script src="https://cdn.tailwindcss.com"></script>
 
