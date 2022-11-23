@@ -11,6 +11,7 @@ The application is consist of 5 main models that are ( User, Profile, Post, Tag,
 
 - CRUD
 - Routing
+- Policies ( soon )
 - Navigation
 - Pagination
 - MVC Framework
@@ -98,8 +99,8 @@ php artisan serve
 
 To access admin dashboard for the application use the following credentials 
 
-- username:admin
-- passworrd:admin123
+- username: admin@writeups.com
+- passworrd: 123456789
 
 
 ## Screenshots
