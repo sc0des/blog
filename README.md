@@ -17,9 +17,9 @@ The application is consist of 5 main models that are ( User, Profile, Post, Tag,
 - MVC Framework
 - Store Media Files ( need fix for view)
 - Responsive Layout
-- Mail and Notification ( add )
+- Mail and Notification 
 - Authorisation Middleware
-- Admin/Profile Dashboard 
+- Admin/Profile Dashboard ( need update)
 
 
 ## Getting Started

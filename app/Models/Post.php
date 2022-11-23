@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Notifications\NewPostAdded;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -13,6 +15,7 @@ class Post extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
+    use Notifiable;
 
     protected $guarded = [];
 
@@ -41,4 +44,22 @@ class Post extends Model implements HasMedia
             ->fit(Manipulations::FIT_CROP, 500, 500)
             ->nonQueued();
     }
+
+    /*  Model Events  */
+
+    protected static function booted()
+    {
+        static::creating(function ($post) {
+        });
+
+        // notification for new posts
+        static::created(function ($post) {
+            $maillists = Maillist::all();
+            foreach ($maillists as $maillist) {
+                $maillist->notify(new NewPostAdded($post));
+            }
+
+        });
+    }
+
 }

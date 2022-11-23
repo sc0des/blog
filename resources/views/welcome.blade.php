@@ -44,17 +44,20 @@
         </section>
 
     <section class="py-40 pt-40 dark:bg-gray-750">
-        <form novalidate="" class="container w-full max-w-xl p-10 mx-auto space-y-6 rounded-md shadow dark:bg-gray-900 ng-untouched ng-pristine ng-valid">
-            <h2 class="text-2xl font-bold leading-none text-center sm:text-4xl ">Sign up to get latest posts updates</h2>
+        <form action="{{route('mails.store')}}" method="post" class="container w-full max-w-xl p-10 mx-auto space-y-6 rounded-md shadow dark:bg-gray-900 ng-untouched ng-pristine ng-valid">
+            @csrf
+            <h2 class="text-2xl font-bold leading-none text-center sm:text-4xl ">Sign up to get latest posts</h2>
             <div>
-                <input id="name" type="text" placeholder="Your name" required="" class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-gray-800">
+                <input name="name" type="text" placeholder="Your name" required="" class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-gray-800">
             </div>
             <div>
-                <input id="email" type="email" placeholder="Your email" required="" class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-gray-800">
+                <input name="email" type="email" placeholder="Your email" required="" class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-gray-800">
             </div>
             <div>
                 <button type="submit" class="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-400 focus:ring-violet-400 hover:ring-violet-400 dark:text-gray-900">Send</button>
             </div>
         </form>
     </section>
+
+
 </x-site-layout>

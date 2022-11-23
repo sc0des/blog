@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 // ======================== PUBLIC ROUTES ==============================
 
 // Welcome View
-Route::get('/', \App\Http\Controllers\WelcomeController::class)->name('welcome');
+Route::get('/', WelcomeController::class)->name('welcome');
+
+// Mails View
+Route::resource('mails', \App\Http\Controllers\MaillistController::class);
 
 // Users View
 Route::resource('users', \App\Http\Controllers\WritersController::class);
