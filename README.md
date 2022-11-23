@@ -1,21 +1,22 @@
 # Writeup Blog
 
 A simple web application blog for CTF writeups, where users can write, read and share their writeups with others. 
-Also, users can comment on wrtieups!
+Also, users can comment on wrtieups!  
+
+Also, admin can manage posts and users for the site through the admin dashboard.
 
 ### Overview
 
-The application is consist of 5 main models that are ( User, Profile, Post, Tag, Comment). The relation between models ranges from one-to-many and many-many.
+The application is consist of 6 main models that are ( User, Profile, Post, Tag, Comment , Maillist). The relation between models ranges from one-to-many and many-many.
 
 ### Key Features
 
 - CRUD
 - Routing
-- Policies ( soon )
-- Navigation
+- Policies ( user/admin )
 - Pagination
 - MVC Framework
-- Store Media Files ( need fix for view)
+- Store Media Files ( fix for view)
 - Responsive Layout
 - Mail and Notification 
 - Authorisation Middleware
