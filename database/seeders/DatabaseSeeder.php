@@ -23,14 +23,6 @@ class DatabaseSeeder extends Seeder
 
         /* Generate Dummy Data*/
 
-        User::factory(15)->create();
-        Profile::factory(15)->create();
-        Post::factory(50)->create();
-        Tag::factory(12)->create();
-        Maillist::factory(15)->create();
-        Comment::factory(25)->create();
-        PostTag::factory(35)->create();
-
         /* Admin User  */
 
         \App\Models\User::factory()->create([
@@ -47,5 +39,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@writeups.com',
             'password'=> bcrypt('test1234'),
         ]);
+
+
+        User::factory(15)->create();
+        Profile::factory(15)->create();
+        Post::factory(50)->create();
+        Tag::factory(12)->create();
+        Maillist::factory(15)->create();
+        Comment::factory(25)->create();
+        PostTag::factory(35)->create();
+
     }
 }
