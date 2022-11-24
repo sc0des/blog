@@ -10,19 +10,27 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('author','tags')->orderBy('posted_at', 'DESC')->paginate(5);
+        $posts = Post::with('author', 'tags')->orderBy('posted_at', 'DESC')->paginate(5);
+
         return view('posts.index', compact('posts'));
     }
 
     public function show(Post $post)
     {
         $post->load('media', 'author', 'tags');
+
         return view('posts.show', compact('post'));
     }
 
     public function create()
     {
         $tags = Tag::all();
+
+        $cats = [];
+        foreach ($tags as $tag) {
+            $cats[$tag->id] = $tag->tag;
+        }
+
         return view('posts.create', compact('tags'));
     }
 
@@ -31,11 +39,13 @@ class PostController extends Controller
         /* edit created post*/
         $tags = Tag::all();
         $post = Post::find($id);
-        $cats = array();
-        foreach ($tags as $tag){
-            $cats[$tag->id]=$tag->tag;
+
+        $cats = [];
+        foreach ($tags as $tag) {
+            $cats[$tag->id] = $tag->tag;
         }
-        return view('posts.edit', compact('post','tags'));
+
+        return view('posts.edit', compact('post', 'tags'));
     }
 
     public function store(Request $request)
@@ -56,7 +66,7 @@ class PostController extends Controller
             'tag_id' => $request->tag_id,
         ]);
 
-        if ($request->has('image')){
+        if ($request->has('image')) {
             $post->addMediaFromRequest('image')->toMediaCollection('image');
         }
 
@@ -83,21 +93,17 @@ class PostController extends Controller
         if ($request->has('image')) {
             $post->media()->first()?->delete();
             $post->addMediaFromRequest('image')->toMediaCollection('image');
-
         }
+
         return redirect()->route('posts.show', $post->id);
     }
 
-
-    public function destroy($id){
-
+    public function destroy($id)
+    {
         /* delete post*/
 
         $post = Post::findOrFail($id)->delete();
+
         return redirect()->route('posts.index');
-
-
     }
-
-
 }
