@@ -24,14 +24,11 @@ Route::get('/', WelcomeController::class)->name('welcome');
 // Mails View
 Route::resource('mails', \App\Http\Controllers\MaillistController::class);
 
-
-// Blog Posts Index
-Route::resource('posts', \App\Http\Controllers\PostController::class)->only('index');
-
 // Tags View
 Route::resource('tags', \App\Http\Controllers\TagsController::class);
 
 require __DIR__.'/auth.php';
+
 
 // ======================== LOGGED ROUTES ==============================
 
@@ -58,6 +55,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 // Admin Routes
 Route::middleware(['auth', 'is_admin'])->group(function () {
 
-    Route::resource('posts', \App\Http\Controllers\PostController::class)->only('destroy');
+    Route::resource('posts', \App\Http\Controllers\PostController::class)->only('destroy','edit');
 
 });
