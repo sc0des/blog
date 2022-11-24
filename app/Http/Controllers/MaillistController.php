@@ -10,7 +10,6 @@ class MaillistController extends Controller
     //
 
     public function store(Request $request)
-
     {
         //Sign up for new post updates
 
@@ -25,6 +24,5 @@ class MaillistController extends Controller
         ]);
 
         return redirect()->back();
-
     }
 }

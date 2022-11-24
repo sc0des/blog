@@ -29,13 +29,13 @@ Route::resource('tags', \App\Http\Controllers\TagsController::class);
 
 require __DIR__.'/auth.php';
 
-
 // ======================== LOGGED ROUTES ==============================
 
 Route::middleware(['auth', 'verified'])->group(function () {
-
     //dashboard
-    Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
+    Route::get('/dashboard', function () {
+    return view('dashboard');
+    })->name('dashboard');
 
     //Blog
     Route::resource('posts', \App\Http\Controllers\PostController::class);
@@ -48,13 +48,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-
 });
 
 // Admin Routes
 Route::middleware(['auth', 'is_admin'])->group(function () {
-
-    Route::resource('posts', \App\Http\Controllers\PostController::class)->only('destroy','edit');
-
+    Route::resource('posts', \App\Http\Controllers\PostController::class)->only('destroy', 'edit');
 });

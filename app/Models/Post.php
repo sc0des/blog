@@ -59,12 +59,10 @@ class Post extends Model implements HasMedia
             foreach ($maillists as $maillist) {
                 $maillist->notify(new NewPostAdded($post));
             }
-
         });
 
         static::saved(function ($post) {
             Cache::forget('welcome.posts');
         });
     }
-
 }

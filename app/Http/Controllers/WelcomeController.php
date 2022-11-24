@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,10 +17,8 @@ class WelcomeController extends Controller
 
         $posts = Cache::remember('welcome.posts', 250, function () {
             return Post::with('media')->latest()->take(2)->get();
-
         });
 
         return view('welcome', compact('posts', 'users'));
     }
-
 }

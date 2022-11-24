@@ -17,15 +17,10 @@ class ProfileFactory extends Factory
      */
     public function definition()
     {
-
         return [
-            'birth_date'=>fake()->dateTimeBetween('1990-01-01', '2012-12-31'),
-            'country'=> fake()->country(),
+            'birth_date' => fake()->dateTimeBetween('1990-01-01', '2012-12-31'),
+            'country' => fake()->country(),
             'user_id' => fake()->numberBetween(1, User::count()),
         ];
     }
-
-
-
 }
-

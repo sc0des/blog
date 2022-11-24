@@ -11,6 +11,7 @@ use App\Models\Profile;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,7 +21,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
         /* Generate Dummy Data*/
 
         /* Admin User  */
@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@writeups.com',
-            'password'=> bcrypt('admin123'),
-            'is_admin'=> 1,
+            'password' => bcrypt('admin123'),
+            'is_admin' => 1,
         ]);
 
         /* Test User */
@@ -37,9 +37,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@writeups.com',
-            'password'=> bcrypt('test1234'),
+            'password' => bcrypt('test1234'),
         ]);
-
 
         User::factory(15)->create();
         Profile::factory(15)->create();
@@ -48,6 +47,5 @@ class DatabaseSeeder extends Seeder
         Maillist::factory(15)->create();
         Comment::factory(25)->create();
         PostTag::factory(35)->create();
-
     }
 }

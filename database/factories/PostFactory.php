@@ -38,5 +38,4 @@ class PostFactory extends Factory
                 ->toMediaCollection();
         });
     }
-
 }
