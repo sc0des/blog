@@ -42,10 +42,10 @@ class DatabaseSeeder extends Seeder
 
         User::factory(15)->create();
         Profile::factory(15)->create();
-        Post::factory(50)->create();
-        Tag::factory(12)->create();
-        Maillist::factory(15)->create();
-        Comment::factory(25)->create();
-        PostTag::factory(35)->create();
+        Post::factory(65)->create();
+        Tag::factory(25)->create();
+        Maillist::factory(10)->create();
+        Comment::factory(45)->create();
+        PostTag::factory(65)->create();
     }
 }
