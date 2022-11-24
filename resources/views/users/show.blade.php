@@ -20,8 +20,8 @@
                                 <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">{{$post->title}}</h3></a>
                             <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
                                 <span> Published on {{$post->posted_at}}</span>
-                                <span> <a href="{{route('posts.edit', $post->id)}}" class="hover:underline dark:text-violet-400">Edit</a></span>
                                 @if (auth()->user()->is_admin)
+                                <span> <a href="{{route('posts.edit', $post->id)}}" class="hover:underline dark:text-violet-400">Edit</a></span>
                                 <form method="post" action="{{route('posts.destroy', $post->id)}}" class="inline">
                                     @csrf
                                     @method('delete')
