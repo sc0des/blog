@@ -13,14 +13,13 @@ The application is consist of 6 main models that are ( User, Profile, Post, Tag,
 
 - CRUD
 - Routing
-- Policies ( user)
 - Pagination
 - MVC Framework
-- Store Media Files ( fix for view)
+- Store Media Files
 - Responsive Layout
 - Mail and Notification 
 - Authorisation Middleware
-- Admin/Profile Dashboard ( in progress)
+- Admin/Profile Dashboard ( in progress )
 
 
 ## Getting Started
@@ -98,6 +97,12 @@ Run the  application
 php artisan serve
 ```
 
+Site Address
+
+```bash
+http://localhost:8000
+```
+
 To access as admin for the application use the following credentials 
 
 - username: admin@writeups.com
@@ -109,6 +114,8 @@ To access as user for the application use can register or can use the following 
 - passworrd: test1234
 
 ## Screenshots
+
+
 
 
 
