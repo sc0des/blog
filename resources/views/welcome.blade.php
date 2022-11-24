@@ -11,7 +11,7 @@
             </div>
             <div class="mt-3">
                 <a rel="noopener noreferrer" href="{{route('posts.show', $post->id)}}" class="text-2xl font-bold hover:underline">{{$post->title}}</a>
-                <img alt="" class="object-cover w-full h-52 dark:bg-gray-500" src="{{$post->getFirstMediaUrl('image', 'thumb')}}">
+                <img alt="" class="object-cover w-full h-52 dark:bg-gray-500" src="{{$post->media->first()?->getUrl('thumbnail')}}">
                 <p class="mt-2">{{ Str::limit($post->content,75)}}</p>
             </div>
             <div class="flex items-center justify-between mt-4">

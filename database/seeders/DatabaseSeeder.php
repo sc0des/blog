@@ -3,8 +3,14 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Comment;
+use App\Models\Maillist;
+use App\Models\Post;
+use App\Models\PostTag;
+use App\Models\Profile;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Database\Seeder;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,14 +20,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(10)->create();
-        \App\Models\Post::factory(15)->create();
-        \App\Models\Tag::factory(10)->create();
-        \App\Models\Comment::factory(12)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        /* Generate Dummy Data*/
+
+        User::factory(15)->create();
+        Profile::factory(15)->create();
+        Post::factory(50)->create();
+        Tag::factory(12)->create();
+        Maillist::factory(15)->create();
+        Comment::factory(25)->create();
+        PostTag::factory(35)->create();
+
+        /* Admin User  */
+
+        \App\Models\User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@writeups.com',
+            'password'=> bcrypt('admin123'),
+            'is_admin'=> 1,
+        ]);
+
+        /* Test User */
+
+        \App\Models\User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@writeups.com',
+            'password'=> bcrypt('test1234'),
+        ]);
     }
 }

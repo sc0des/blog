@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Maillist>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PostTag>
  */
-class MaillistFactory extends Factory
+class PostTagFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,9 @@ class MaillistFactory extends Factory
     public function definition()
     {
         return [
-            //
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+
+            'tag_id' => fake()->numberBetween(1, \App\Models\Tag::count()),
+            'post_id' => fake()->numberBetween(1, \App\Models\Post::count()),
         ];
     }
 }

@@ -24,7 +24,7 @@ class CommentFactory extends Factory
             'post_id' => Post::all()->random()->id,
             'author_id' => User::all()->random()->id,
             'comment' => fake()->sentence(),
-            'commented_at' => fake()->dateTimeBetween('-1 week', 'now'),
+            'commented_at' => fake()->dateTimeBetween('-4 week', 'now'),
 
         ];
     }
