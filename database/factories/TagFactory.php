@@ -18,7 +18,7 @@ class TagFactory extends Factory
     {
         return [
             // unique tags
-            'tag' => ucfirst(fake()->unique()->word(15)),
+            'name' => ucfirst(fake()->unique()->word(15)),
         ];
     }
 }

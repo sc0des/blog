@@ -13,7 +13,7 @@
         @endif
         <div class="w-full mx-auto space-y-4">
             <h2 class="text-2xl font-bold ">{{$post->title}}</h2>
-            <span class="p-1 hover:underline">Tag : {{$post->tags('tag_id')->pluck('tag')->implode('')}}</span>
+            <span class="p-1 hover:underline">Tag : {{$post->tags('tag_id')->pluck('name')->implode('')}}</span>
                 <div class="dark:text-gray-100">
                     <img src="{{$post->media->first()?->getUrl('thumbnail')}}"  class="object-cover w-full h-52 dark:bg-gray-500">
                 </div>

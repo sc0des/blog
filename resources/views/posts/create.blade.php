@@ -15,7 +15,7 @@
                         <label for="tag_id" class="text-sm ">Tag</label>
                         <select name="tag_id" class="text-gray-700 block px-4 py-2 text-sm">
                             @foreach($tags as $tag)
-                            <option value="{{$tag->id}}">{{$tag->tag}}</option>
+                            <option value="{{$tag->id}}">{{$tag->name}}</option>
                             @endforeach
                         </select>
 

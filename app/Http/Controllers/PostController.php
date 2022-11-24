@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\PostTag;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -18,25 +19,18 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $post->load('media', 'author', 'tags');
-
         return view('posts.show', compact('post'));
     }
 
     public function create()
     {
         $tags = Tag::all();
-
-        $cats = [];
-        foreach ($tags as $tag) {
-            $cats[$tag->id] = $tag->tag;
-        }
-
         return view('posts.create', compact('tags'));
     }
 
     public function edit($id)
     {
-        /* edit created post*/
+        /* Edit created post*/
         $tags = Tag::all();
         $post = Post::find($id);
 
@@ -44,6 +38,8 @@ class PostController extends Controller
         foreach ($tags as $tag) {
             $cats[$tag->id] = $tag->tag;
         }
+
+        //$post->tags()->sync(id);
 
         return view('posts.edit', compact('post', 'tags'));
     }
@@ -66,6 +62,12 @@ class PostController extends Controller
             'tag_id' => $request->tag_id,
         ]);
 
+        // Add to pivot table
+        PostTag::create([
+            'post_id' => $post->id,
+            'tag_id' => $request->tag_id,
+        ]);
+
         if ($request->has('image')) {
             $post->addMediaFromRequest('image')->toMediaCollection('image');
         }
@@ -78,8 +80,9 @@ class PostController extends Controller
         /* update and store created post*/
 
         $post = Post::find($id);
+        $tags = Tag::all();
 
-        /* post validation */
+        /* Post validation */
 
         $validated = $request->validate([
             'title' => 'required|min:6|max:255',
@@ -89,6 +92,9 @@ class PostController extends Controller
         ]);
 
         $post->update($validated);
+
+
+        //$post->tags()->sync($request->name);
 
         if ($request->has('image')) {
             $post->media()->first()?->delete();
