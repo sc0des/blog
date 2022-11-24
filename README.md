@@ -3,7 +3,7 @@
 A simple web application blog for CTF writeups, where users can write, read and share their writeups with others. 
 Also, users can comment on wrtieups!  
 
-Also, admin can manage posts and users for the site through the admin dashboard.
+Also, admin can manage posts and users for the site through the admin controls.
 
 ### Overview
 
@@ -13,14 +13,14 @@ The application is consist of 6 main models that are ( User, Profile, Post, Tag,
 
 - CRUD
 - Routing
-- Policies ( user/admin )
+- Policies ( user)
 - Pagination
 - MVC Framework
 - Store Media Files ( fix for view)
 - Responsive Layout
 - Mail and Notification 
 - Authorisation Middleware
-- Admin/Profile Dashboard ( need update)
+- Admin/Profile Dashboard ( in progress)
 
 
 ## Getting Started
@@ -98,11 +98,15 @@ Run the  application
 php artisan serve
 ```
 
-To access admin dashboard for the application use the following credentials 
+To access as admin for the application use the following credentials 
 
 - username: admin@writeups.com
-- passworrd: 123456789
+- passworrd: admin123
 
+To access as user for the application use can register or can use the following credentials
+
+- username: test@writeups.com
+- passworrd: test1234
 
 ## Screenshots
 
