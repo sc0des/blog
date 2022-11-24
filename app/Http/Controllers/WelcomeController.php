@@ -16,7 +16,7 @@ class WelcomeController extends Controller
         });
 
         $posts = Cache::remember('welcome.posts', 250, function () {
-            return Post::with('media')->latest()->take(2)->get();
+            return Post::with('media')->latest()->take(3)->get();
         });
 
         return view('welcome', compact('posts', 'users'));

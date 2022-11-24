@@ -40,12 +40,12 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('test1234'),
         ]);
 
-        User::factory(15)->create();
-        Profile::factory(15)->create();
+        User::factory(25)->create();
+        Profile::factory(25)->create();
         Post::factory(65)->create();
-        Tag::factory(25)->create();
+        Tag::factory(15)->create();
         Maillist::factory(10)->create();
-        Comment::factory(45)->create();
+        Comment::factory(50)->create();
         PostTag::factory(65)->create();
     }
 }

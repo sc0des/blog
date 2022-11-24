@@ -19,12 +19,14 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $post->load('media', 'author', 'tags');
+
         return view('posts.show', compact('post'));
     }
 
     public function create()
     {
         $tags = Tag::all();
+
         return view('posts.create', compact('tags'));
     }
 
@@ -92,7 +94,6 @@ class PostController extends Controller
         ]);
 
         $post->update($validated);
-
 
         //$post->tags()->sync($request->name);
 

@@ -7,8 +7,7 @@
         <div class="container max-w-4xl px-10 pt-12 pb-35 py-6 mx-auto rounded-lg shadow-sm dark:bg-gray-900 ">
             <div class="flex items-center justify-between divide-y">
                 <span class="text-sm dark:text-gray-400">{{$post->posted_at}}</span>
-                <a rel="noopener noreferrer" href="#" class="px-2 py-1 font-bold rounded dark:bg-violet-400 dark:text-gray-900">{{$post->tag_id}}</a>
-            </div>
+                </div>
             <div class="mt-3">
                 <a rel="noopener noreferrer" href="{{route('posts.show', $post->id)}}" class="text-2xl font-bold hover:underline">{{$post->title}}</a>
                 <img alt="" class="object-cover w-full h-52 dark:bg-gray-500" src="{{$post->media->first()?->getUrl('thumbnail')}}">
