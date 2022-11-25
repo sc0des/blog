@@ -115,6 +115,22 @@ To access as user for the application use can register or can use the following 
 
 ## Screenshots
 
+- Welcome Page
+
+![App Screenshot](https://raw.githubusercontent.com/sc0des/blog/master/screenshots/welcome_page.png)
+
+- Blogs Page
+
+![App Screenshot](https://raw.githubusercontent.com/sc0des/blog/master/screenshots/blog_index_page.png)
+
+![App Screenshot](https://raw.githubusercontent.com/sc0des/blog/master/screenshots/blog_show_page.png)
+
+- Tag Page
+
+![App Screenshot](https://raw.githubusercontent.com/sc0des/blog/master/screenshots/tag_index_page.png)
+
+![App Screenshot](https://raw.githubusercontent.com/sc0des/blog/master/screenshots/tag_show_page.png)
+
 
 
 
